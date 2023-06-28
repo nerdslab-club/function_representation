@@ -1,0 +1,82 @@
+def addition(x: int, y: int) -> int: 
+def subtraction(x: int, y: int) -> int:
+def multiplication(x: int, y: int) -> int:
+def division(x: int, y: int) -> float:
+def exponentiation(x: int, y: int) -> int:
+def absolute_value(x: int) -> int:
+def square_root(x: float) -> float:
+def floor_division(x: int, y: int) -> int:
+def modulus(x: int, y: int) -> int:
+def logarithm(x: float, base: float) -> float:
+def sine(x: float) -> float:
+def cosine(x: float) -> float:
+def tangent(x: float) -> float:
+def arcsine(x: float) -> float:
+def arccosine(x: float) -> float:
+def arctangent(x: float) -> float:
+def hyperbolic_sine(x: float) -> float:
+def hyperbolic_cosine(x: float) -> float:
+def hyperbolic_tangent(x: float) -> float:
+def logarithm_base_10(x: float) -> float:
+def logarithm_base_2(x: float) -> float:
+def power(x: float, y: float) -> float:
+def degrees_to_radians(x: float) -> float:
+def radians_to_degrees(x: float) -> float:
+def factorial(x: int) -> int:
+def gcd(x: int, y: int) -> int:
+def lcm(x: int, y: int) -> int:
+def isqrt(x: int) -> int:
+def pow_mod(x: int, y: int, mod: int) -> int:
+def ceil(x: float) -> int:
+def floor(x: float) -> int:
+def round(x: float) -> int:
+def absolute_difference(x: float, y: float) -> float:
+def greatest_value(x: float, y: float) -> float:
+def smallest_value(x: float, y: float) -> float:
+def average(numbers: list) -> float:
+def product(numbers: list) -> float:
+def factorial(x: int) -> int:
+def is_prime(x: int) -> bool:
+def prime_factors(x: int) -> list:
+def is_perfect_square(x: int) -> bool:
+def is_perfect_cube(x: int) -> bool:
+def mean(numbers: list) -> float:
+def median(numbers: list) -> float:
+def relu(self, x):
+def ascending_sort(self, lst):
+def descending_sort(self, lst):
+def square(self, x):
+def percentage(self, x, y):
+def absolute(self, x):
+def factorial(self, x):
+def power_of_ten(self, x):
+def cube(self, x):
+def cube_root(self, x):
+def is_even(self, x):
+def is_odd(self, x):
+def max_value(self, lst):
+def min_value(self, lst):
+def nth_root(self, x, n):
+def geometric_mean(self, lst):
+def is_power_of_two(self, x):
+def degrees_to_radians(self, degrees):
+def radians_to_degrees(self, radians):
+def binary_to_decimal(self, binary):
+def decimal_to_binary(self, decimal):
+def is_palindrome(self, x):
+def sum_of_digits(x: int) -> int:
+def hypotenuse(a: float, b: float) -> float:
+def circle_area(radius: float) -> float:
+def permutation(n: int, r: int) -> int:
+def combination(n: int, r: int) -> int:
+def geometric_series_sum(a: float, r: float, n: int) -> float:
+def sigmoid(x: float) -> float:
+def cosine_similarity(vector1: list, vector2: list) -> float:
+def euler_totient(n: int) -> int:
+def l1_norm(vector: list) -> float:
+def l2_norm(vector: list) -> float:
+
+
+average() == division(sum_of_digits(), len())
+
+king - man + women == queen 
