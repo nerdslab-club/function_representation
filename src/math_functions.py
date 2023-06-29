@@ -600,29 +600,16 @@ class MathFunctions:
         return x ** 2
 
     @staticmethod
-    def square_float(x: float) -> float:
-        """Calculates the square of a float.
+    def square(x: float | int) -> float | int:
+        """Calculates the square of a number.
 
         Params:
-            x (float): Number to be squared.
+            x (float | int): Number to be squared.
 
         Returns:
-            float: The square of the input number.
+            float | int: The square of the input number.
         """
         return x ** 2
-
-    @staticmethod
-    def percentage(x: float, y: float) -> float:
-        """Calculates the percentage of one value relative to another.
-
-        Params:
-            x (float): Numerator value.
-            y (float): Denominator value.
-
-        Returns:
-            The percentage value in float
-        """
-        return (x / y) * 100
 
     @staticmethod
     def absolute(x: float) -> float:
@@ -721,7 +708,7 @@ class MathFunctions:
         return min(lst)
 
     @staticmethod
-    def nth_root(x: float, n:int) -> float:
+    def nth_root(x: float, n: int) -> float:
         """Calculates the nth root of a number.
 
         Params:
@@ -976,9 +963,25 @@ class MathFunctions:
         return sum(numbers) / len(numbers)
 
     @staticmethod
-    def sum_item_of_array(numbers: list) -> float:
+    def sum(numbers: list) -> float:
+        """This function calculates the sum of the given list of numbers and returns the result as a float.
+
+        Params:
+            numbers (list): A list of numbers.
+
+        Returns:
+            float: The sum of the given list of numbers.
+        """
         return sum(numbers)
 
     @staticmethod
-    def length_of_array(numbers: list) -> float:
+    def length(numbers: list) -> int:
+        """This function calculates the length of the given list of numbers and returns the result as a int.
+
+        Params:
+            numbers (list): A list of items.
+
+        Returns:
+            float: The length of the given list of items.
+        """
         return len(numbers)

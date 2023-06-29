@@ -1,0 +1,196 @@
+import inspect
+import re
+import types
+from collections import defaultdict
+
+from math_functions import MathFunctions as mF
+
+
+class FunctionManager:
+    def __init__(self):
+        self.name_to_reference = {}
+        self.reference_to_name = defaultdict(str)
+        self._setNameToReference()
+        self._setReferenceToName()
+        pass
+
+    def _setNameToReference(self):
+        self.name_to_reference = {
+            "addition": mF.addition,
+            "subtraction": mF.subtraction,
+            "multiplication": mF.multiplication,
+            "division": mF.division,
+            "exponentiation": mF.exponentiation,
+            "absolute_value": mF.absolute_value,
+            "square_root": mF.square_root,
+            "floor_division": mF.floor_division,
+            "modulus": mF.modulus,
+            "logarithm": mF.logarithm,
+            "sine": mF.sine,
+            "cosine": mF.cosine,
+            "tangent": mF.tangent,
+            "arcsine": mF.arcsine,
+            "arccosine": mF.arccosine,
+            "arctangent": mF.arctangent,
+            "hyperbolic_sine": mF.hyperbolic_sine,
+            "hyperbolic_cosine": mF.hyperbolic_cosine,
+            "hyperbolic_tangent": mF.hyperbolic_tangent,
+            "logarithm_base_10": mF.logarithm_base_10,
+            "power": mF.power,
+            "degrees_to_radians": mF.degrees_to_radians,
+            "radians_to_degrees": mF.radians_to_degrees,
+            "gcd": mF.gcd,
+            "lcm": mF.lcm,
+            "isqrt": mF.isqrt,
+            "pow_mod": mF.pow_mod,
+            "ceil": mF.ceil,
+            "floor": mF.floor,
+            "round": mF.round,
+            "absolute_difference": mF.absolute_difference,
+            "greatest_value": mF.greatest_value,
+            "smallest_value": mF.smallest_value,
+            "product": mF.product,
+            "factorial": mF.factorial,
+            "is_prime": mF.is_prime,
+            "prime_factors": mF.prime_factors,
+            "is_perfect_square": mF.is_perfect_square,
+            "is_perfect_cube": mF.is_perfect_cube,
+            "mean": mF.mean,
+            "median": mF.median,
+            "relu": mF.relu,
+            "ascending_sort": mF.ascending_sort,
+            "descending_sort": mF.descending_sort,
+            "square_int": mF.square_int,
+            "square": mF.square,
+            "absolute": mF.absolute,
+            "power_of_ten": mF.power_of_ten,
+            "cube": mF.cube,
+            "cube_root": mF.cube_root,
+            "is_even": mF.is_even,
+            "is_odd": mF.is_odd,
+            "max_value": mF.max_value,
+            "min_value": mF.min_value,
+            "nth_root": mF.nth_root,
+            "geometric_mean": mF.geometric_mean,
+            "is_power_of_two": mF.is_power_of_two,
+            "binary_to_decimal": mF.binary_to_decimal,
+            "decimal_to_binary": mF.decimal_to_binary,
+            "is_palindrome": mF.is_palindrome,
+            "sum_of_digits": mF.sum_of_digits,
+            "hypotenuse": mF.hypotenuse,
+            "circle_area": mF.circle_area,
+            "permutation": mF.permutation,
+            "combination": mF.combination,
+            "geometric_series_sum": mF.geometric_series_sum,
+            "sigmoid": mF.sigmoid,
+            "cosine_similarity": mF.cosine_similarity,
+            "euler_totient": mF.euler_totient,
+            "l1_norm": mF.l1_norm,
+            "l2_norm": mF.l2_norm,
+            "average": mF.average,
+            "sum": mF.sum,
+            "length": mF.length
+        }
+
+    def _setReferenceToName(self):
+        self.reference_to_name = {
+            mF.addition: "addition",
+            mF.subtraction: "subtraction",
+            mF.multiplication: "multiplication",
+            mF.division: "division",
+            mF.exponentiation: "exponentiation",
+            mF.absolute_value: "absolute_value",
+            mF.square_root: "square_root",
+            mF.floor_division: "floor_division",
+            mF.modulus: "modulus",
+            mF.logarithm: "logarithm",
+            mF.sine: "sine",
+            mF.cosine: "cosine",
+            mF.tangent: "tangent",
+            mF.arcsine: "arcsine",
+            mF.arccosine: "arccosine",
+            mF.arctangent: "arctangent",
+            mF.hyperbolic_sine: "hyperbolic_sine",
+            mF.hyperbolic_cosine: "hyperbolic_cosine",
+            mF.hyperbolic_tangent: "hyperbolic_tangent",
+            mF.logarithm_base_10: "logarithm_base_10",
+            mF.power: "power",
+            mF.degrees_to_radians: "degrees_to_radians",
+            mF.radians_to_degrees: "radians_to_degrees",
+            mF.gcd: "gcd",
+            mF.lcm: "lcm",
+            mF.isqrt: "isqrt",
+            mF.pow_mod: "pow_mod",
+            mF.ceil: "ceil",
+            mF.floor: "floor",
+            mF.round: "round",
+            mF.absolute_difference: "absolute_difference",
+            mF.greatest_value: "greatest_value",
+            mF.smallest_value: "smallest_value",
+            mF.product: "product",
+            mF.factorial: "factorial",
+            mF.is_prime: "is_prime",
+            mF.prime_factors: "prime_factors",
+            mF.is_perfect_square: "is_perfect_square",
+            mF.is_perfect_cube: "is_perfect_cube",
+            mF.mean: "mean",
+            mF.median: "median",
+            mF.relu: "relu",
+            mF.ascending_sort: "ascending_sort",
+            mF.descending_sort: "descending_sort",
+            mF.square_int: "square_int",
+            mF.square: "square",
+            mF.absolute: "absolute",
+            mF.power_of_ten: "power_of_ten",
+            mF.cube: "cube",
+            mF.cube_root: "cube_root",
+            mF.is_even: "is_even",
+            mF.is_odd: "is_odd",
+            mF.max_value: "max_value",
+            mF.min_value: "min_value",
+            mF.nth_root: "nth_root",
+            mF.geometric_mean: "geometric_mean",
+            mF.is_power_of_two: "is_power_of_two",
+            mF.binary_to_decimal: "binary_to_decimal",
+            mF.decimal_to_binary: "decimal_to_binary",
+            mF.is_palindrome: "is_palindrome",
+            mF.sum_of_digits: "sum_of_digits",
+            mF.hypotenuse: "hypotenuse",
+            mF.circle_area: "circle_area",
+            mF.permutation: "permutation",
+            mF.combination: "combination",
+            mF.geometric_series_sum: "geometric_series_sum",
+            mF.sigmoid: "sigmoid",
+            mF.cosine_similarity: "cosine_similarity",
+            mF.euler_totient: "euler_totient",
+            mF.l1_norm: "l1_norm",
+            mF.l2_norm: "l2_norm",
+            mF.average: "average",
+            mF.sum: "sum",
+            mF.length: "length"
+        }
+
+    def getNameToReference(self):
+        return self.name_to_reference
+
+    def getReferenceToName(self):
+        return self.reference_to_name
+
+    @staticmethod
+    def getFunctionAsString(functionName: types):
+        return inspect.getsource(functionName)
+
+    @staticmethod
+    def getDocStringOfFunction(functionName: types):
+        return functionName.__doc__
+
+    @staticmethod
+    def getFunctionAsStringWithoutDocString(functionName: types):
+        # Get the source code of the function
+        source_lines = inspect.getsource(functionName)
+        source_lines = re.sub(r'"{3}([\s\S]*?"{3})', "", source_lines)
+        return source_lines
+
+
+if __name__ == '__main__':
+    print(FunctionManager.getFunctionAsStringWithoutDocString(mF.average))
