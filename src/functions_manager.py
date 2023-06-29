@@ -12,7 +12,6 @@ class FunctionManager:
         self.reference_to_name = defaultdict(str)
         self._setNameToReference()
         self._setReferenceToName()
-        pass
 
     def _setNameToReference(self):
         self.name_to_reference = {
@@ -89,7 +88,23 @@ class FunctionManager:
             "l2_norm": mF.l2_norm,
             "average": mF.average,
             "sum": mF.sum,
-            "length": mF.length
+            "length": mF.length,
+            "a_plus_b_whole_square": mF.a_plus_b_whole_square,
+            "a_plus_2ab_plus_b_squared": mF.a_plus_2ab_plus_b_squared,
+            "a_minus_b_whole_squared_plus_4ab": mF.a_minus_b_whole_squared_plus_4ab,
+            "a_minus_b_whole_squared": mF.a_minus_b_whole_squared,
+            "a_squared_minus_2ab_plus_b_squared": mF.a_squared_minus_2ab_plus_b_squared,
+            "a_squared_plus_b_squared": mF.a_squared_plus_b_squared,
+            "negative_2ab": mF.negative_2ab,
+            "positive_2ab": mF.positive_2ab,
+            "x_plus_a_times_x_plus_b": mF.x_plus_a_times_x_plus_b,
+            "x_squared_plus_a_plus_b_times_x_plus_ab": mF.x_squared_plus_a_plus_b_times_x_plus_ab,
+            "a_cubed_plus_b_cubed": mF.a_cubed_plus_b_cubed,
+            "a_plus_b_whole_cubed_minus_3ab_times_a_plus_b": mF.a_plus_b_whole_cubed_minus_3ab_times_a_plus_b,
+            "a_plus_b_times_a_squared_minus_ab_plus_b_squared": mF.a_plus_b_times_a_squared_minus_ab_plus_b_squared,
+            "a_cubed_minus_b_cubed": mF.a_cubed_minus_b_cubed,
+            "a_minus_b_whole_cubed_minus_3ab_times_a_minus_b": mF.a_minus_b_whole_cubed_minus_3ab_times_a_minus_b,
+            "a_minus_b_times_a_squared_plus_ab_plus_b_squared": mF.a_minus_b_times_a_squared_plus_ab_plus_b_squared,
         }
 
     def _setReferenceToName(self):
@@ -167,7 +182,23 @@ class FunctionManager:
             mF.l2_norm: "l2_norm",
             mF.average: "average",
             mF.sum: "sum",
-            mF.length: "length"
+            mF.length: "length",
+            mF.a_plus_b_whole_square: "a_plus_b_whole_square",
+            mF.a_plus_2ab_plus_b_squared: "a_plus_2ab_plus_b_squared",
+            mF.a_minus_b_whole_squared_plus_4ab: "a_minus_b_whole_squared_plus_4ab",
+            mF.a_minus_b_whole_squared: "a_minus_b_whole_squared",
+            mF.a_squared_minus_2ab_plus_b_squared: "a_squared_minus_2ab_plus_b_squared",
+            mF.a_squared_plus_b_squared: "a_squared_plus_b_squared",
+            mF.negative_2ab: "negative_2ab",
+            mF.positive_2ab: "positive_2ab",
+            mF.x_plus_a_times_x_plus_b: "x_plus_a_times_x_plus_b",
+            mF.x_squared_plus_a_plus_b_times_x_plus_ab: "x_squared_plus_a_plus_b_times_x_plus_ab",
+            mF.a_cubed_plus_b_cubed: "a_cubed_plus_b_cubed",
+            mF.a_plus_b_whole_cubed_minus_3ab_times_a_plus_b: "a_plus_b_whole_cubed_minus_3ab_times_a_plus_b",
+            mF.a_plus_b_times_a_squared_minus_ab_plus_b_squared: "a_plus_b_times_a_squared_minus_ab_plus_b_squared",
+            mF.a_cubed_minus_b_cubed: "a_cubed_minus_b_cubed",
+            mF.a_minus_b_whole_cubed_minus_3ab_times_a_minus_b: "a_minus_b_whole_cubed_minus_3ab_times_a_minus_b",
+            mF.a_minus_b_times_a_squared_plus_ab_plus_b_squared: "a_minus_b_times_a_squared_plus_ab_plus_b_squared"
         }
 
     def getNameToReference(self):

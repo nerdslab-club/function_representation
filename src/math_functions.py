@@ -1,4 +1,5 @@
 import math
+
 import numpy as np
 
 
@@ -985,3 +986,260 @@ class MathFunctions:
             float: The length of the given list of items.
         """
         return len(numbers)
+
+    @staticmethod
+    def a_plus_b_whole_square(a: int, b: int) -> int:
+        """This function calculates a plus b whole square formula and returns the result as an int.
+
+        Params:
+            a (int): First value for which (a+b)^2 is going to be calculated
+            b (int): Second value for which (a+b)^2 is going to be calculated
+
+        Returns:
+            int: The result of (a+b)^2 after calculating.
+        """
+        return (a+b)**2
+
+    @staticmethod
+    def a_plus_2ab_plus_b_squared(a: int, b: int) -> int:
+        """
+        This function calculates the expression a^2 + 2ab + b^2 and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression a^2 + 2ab + b^2.
+        """
+        return a ** 2 + 2 * a * b + b ** 2
+
+    @staticmethod
+    def a_minus_b_whole_squared_plus_4ab(a: int, b: int) -> int:
+        """
+        This function calculates the expression (a - b)^2 + 4ab and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression (a - b)^2 + 4ab.
+        """
+        return (a - b) ** 2 + 4 * a * b
+
+    @staticmethod
+    def a_minus_b_whole_squared(a: int, b: int) -> int:
+        """
+        This function calculates the expression (a - b)^2 and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression (a - b)^2.
+        """
+        return (a - b) ** 2
+
+    @staticmethod
+    def a_squared_minus_2ab_plus_b_squared(a: int, b: int) -> int:
+        """
+        This function calculates the expression a^2 - 2ab + b^2 and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression a^2 - 2ab + b^2.
+        """
+        return a ** 2 - 2 * a * b + b ** 2
+
+    @staticmethod
+    def a_plus_b_whole_squared_minus_4ab(a: int, b: int) -> int:
+        """
+        This function calculates the expression (a + b)^2 - 4ab and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression (a + b)^2 - 4ab.
+        """
+        return (a + b) ** 2 - 4 * a * b
+
+    @staticmethod
+    def a_squared_plus_b_squared(a: int, b: int) -> int:
+        """
+        This function calculates the expression a^2 + b^2 and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression a^2 + b^2.
+        """
+        return a ** 2 + b ** 2
+
+    @staticmethod
+    def negative_2ab(a: int, b: int) -> int:
+        """
+        This function calculates the expression -2ab and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression -2ab.
+        """
+        return -2 * a * b
+
+    @staticmethod
+    def positive_2ab(a: int, b: int) -> int:
+        """
+        This function calculates the expression 2ab and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression 2ab.
+        """
+        return 2 * a * b
+
+    @staticmethod
+    def x_plus_a_times_x_plus_b(x: int, a: int, b: int) -> int:
+        """
+        This function calculates the expression (x + a)(x + b) and returns the result as an int.
+
+        Params:
+            x (int): The value of x for which the expression is going to be calculated.
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression (x + a)(x + b).
+        """
+        return (x + a) * (x + b)
+
+    @staticmethod
+    def x_squared_plus_a_plus_b_times_x_plus_ab(x: int, a: int, b: int) -> int:
+        """
+        This function calculates the expression x^2 + (a + b)x + ab and returns the result as an int.
+
+        Params:
+            x (int): The value of x for which the expression is going to be calculated.
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression x^2 + (a + b)x + ab.
+        """
+        return x ** 2 + (a + b) * x + a * b
+
+    @staticmethod
+    def a_cubed_plus_b_cubed(a: int, b: int) -> int:
+        """
+        This function calculates the expression a^3 + b^3 and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression a^3 + b^3.
+        """
+        return a ** 3 + b ** 3
+
+    @staticmethod
+    def a_plus_b_whole_cubed_minus_3ab_times_a_plus_b(a: int, b: int) -> int:
+        """
+        This function calculates the expression (a + b)^3 - 3ab(a + b) and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression (a + b)^3 - 3ab(a + b).
+        """
+        return (a + b) ** 3 - 3 * a * b * (a + b)
+
+    @staticmethod
+    def a_plus_b_times_a_squared_minus_ab_plus_b_squared(a: int, b: int) -> int:
+        """
+        This function calculates the expression (a + b)(a^2 - ab + b^2) and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression (a + b)(a^2 - ab + b^2).
+        """
+        return (a + b) * (a ** 2 - a * b + b ** 2)
+
+    @staticmethod
+    def a_cubed_minus_b_cubed(a: int, b: int) -> int:
+        """
+        This function calculates the expression a^3 - b^3 and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression a^3 - b^3.
+        """
+        return a ** 3 - b ** 3
+
+    @staticmethod
+    def a_minus_b_whole_cubed_minus_3ab_times_a_minus_b(a: int, b: int) -> int:
+        """
+        This function calculates the expression (a - b)^3 - 3ab(a - b) and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression (a - b)^3 - 3ab(a - b).
+        """
+        return (a - b) ** 3 - 3 * a * b * (a - b)
+
+    @staticmethod
+    def a_minus_b_times_a_squared_plus_ab_plus_b_squared(a: int, b: int) -> int:
+        """
+        This function calculates the expression (a - b)(a^2 + ab + b^2) and returns the result as an int.
+
+        Params:
+            a (int): First value for which the expression is going to be calculated.
+            b (int): Second value for which the expression is going to be calculated.
+
+        Returns:
+            int: The result of the expression (a - b)(a^2 + ab + b^2).
+        """
+        return (a - b) * (a ** 2 + a * b + b ** 2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
