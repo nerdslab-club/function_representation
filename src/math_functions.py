@@ -1001,7 +1001,7 @@ class MathFunctions:
         return (a+b)**2
 
     @staticmethod
-    def a_plus_2ab_plus_b_squared(a: int, b: int) -> int:
+    def a_squared_plus_2ab_plus_b_squared(a: int, b: int) -> int:
         """
         This function calculates the expression a^2 + 2ab + b^2 and returns the result as an int.
 
