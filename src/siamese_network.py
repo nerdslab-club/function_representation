@@ -58,3 +58,6 @@ class SiameseNetwork(pl.LightningModule):
         embedding2 = self(input2)
         similarity_score = F.pairwise_distance(embedding1, embedding2)
         return similarity_score
+
+    def getSiameseEmbedding(self, input1):
+        return self(input1)

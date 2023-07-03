@@ -1,9 +1,13 @@
 from torch.utils.data import Dataset
 
+from src.code_embedding import CodeEmbedding
+
+
 class SNDataset(Dataset):
     def __init__(self, name_to_reference_map: dict, positive_negative_function_map: dict):
         self.name_to_reference_map = name_to_reference_map
         self.positive_negative_function_map = positive_negative_function_map
+        self.CodeEmbedding = CodeEmbedding()
         self.samples = []
         self._find_unique_combinations(name_to_reference_map, positive_negative_function_map)
         self.current_item = -1
@@ -14,7 +18,10 @@ class SNDataset(Dataset):
     def __getitem__(self, index):
         # Get next item from the combination.
         self.current_item += 1
-        anchor, positive, negative = self.samples[self.current_item]
+        anchor_fun, positive_fun, negative_fun = self.samples[self.current_item]
+        anchor = self.CodeEmbedding.getPerfectFunctionEmbedding(anchor_fun)
+        positive = self.CodeEmbedding.getPerfectFunctionEmbedding(positive_fun)
+        negative = self.CodeEmbedding.getPerfectFunctionEmbedding(negative_fun)
         return anchor, positive, negative
 
     def _find_unique_combinations(self, name_to_reference_map: dict, positive_negative_function_map: dict):

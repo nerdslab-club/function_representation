@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 from transformers import RobertaConfig
 import functions_manager as fm
-import torch
+import types
 import torch.nn.functional as functional
 
 
@@ -37,7 +37,7 @@ class CodeEmbedding:
         outputs = self.model(**inputs)
         return outputs
 
-    def _getRawFunctionEmbedding(self, function_name: str):
+    def _getRawFunctionEmbeddingFromName(self, function_name: str):
         """Calculate the hidden states embedding for the function tokens
 
         :param function_name: Name of the function.
@@ -52,14 +52,44 @@ class CodeEmbedding:
         hidden_states = outputs.hidden_states
         return hidden_states
 
-    def getPerfectFunctionEmbedding(self, function_name: str, max_length=300):
+    def getPerfectFunctionEmbeddingFromName(self, function_name: str, max_length=300):
         """Reshape the last hidden state of the embedding into [max_length, 768] tensor
 
         :param function_name: Name of the function.
         :param max_length: Max length for token that is supported.
         :return: Last hidden state embedding of size [n * 768]
         """
-        hidden_states_embedding = self._getRawFunctionEmbedding(function_name)
+        hidden_states_embedding = self._getRawFunctionEmbeddingFromName(function_name)
+
+        # Pad the tensor to the desired shape [300, 768]
+        padded_tensor = functional.pad(hidden_states_embedding[0],
+                                       (0, 0, 0, max_length - hidden_states_embedding[0].shape[1]))
+        reshaped_tensor = padded_tensor.squeeze()
+        return reshaped_tensor
+
+    def _getRawFunctionEmbedding(self, function_ref: types):
+        """Calculate the hidden states embedding for the function tokens
+
+        :param function_ref: Reference to the function.
+        :return: hidden states embedding of size [1 * n * 768]
+        """
+        func_raw_str = self.function_manager.getFunctionAsStringWithoutDocString(function_ref)
+
+        inputs = self.tokenizer(func_raw_str, return_tensors="pt")
+
+        outputs = self.model(**inputs)
+        hidden_states = outputs.hidden_states
+        return hidden_states
+
+    def getPerfectFunctionEmbedding(self, function_ref: types, max_length=300):
+        """Reshape the last hidden state of the embedding into [max_length, 768] tensor
+
+        :param function_ref: Reference to the function.
+        :param max_length: Max length for token that is supported.
+        :return: Last hidden state embedding of size [n * 768]
+        """
+
+        hidden_states_embedding = self._getRawFunctionEmbedding(function_ref)
 
         # Pad the tensor to the desired shape [300, 768]
         padded_tensor = functional.pad(hidden_states_embedding[0],
