@@ -10,8 +10,12 @@ class FunctionManager:
     def __init__(self):
         self.name_to_reference = {}
         self.reference_to_name = defaultdict(str)
+        self.positive_negative_function_map = {}
+        self.vector_arithmetics = []
         self._setNameToReference()
         self._setReferenceToName()
+        self._setVectorArithmetics()
+        self._setPositiveNegativeFunctionMap()
 
     def _setNameToReference(self):
         self.name_to_reference = {
@@ -90,10 +94,11 @@ class FunctionManager:
             "sum": mF.sum,
             "length": mF.length,
             "a_plus_b_whole_square": mF.a_plus_b_whole_square,
-            "a_plus_2ab_plus_b_squared": mF.a_squared_plus_2ab_plus_b_squared,
+            "a_squared_plus_2ab_plus_b_squared": mF.a_squared_plus_2ab_plus_b_squared,
             "a_minus_b_whole_squared_plus_4ab": mF.a_minus_b_whole_squared_plus_4ab,
             "a_minus_b_whole_squared": mF.a_minus_b_whole_squared,
             "a_squared_minus_2ab_plus_b_squared": mF.a_squared_minus_2ab_plus_b_squared,
+            "a_plus_b_whole_squared_minus_4ab": mF.a_plus_b_whole_squared_minus_4ab,
             "a_squared_plus_b_squared": mF.a_squared_plus_b_squared,
             "negative_2ab": mF.negative_2ab,
             "positive_2ab": mF.positive_2ab,
@@ -184,10 +189,11 @@ class FunctionManager:
             mF.sum: "sum",
             mF.length: "length",
             mF.a_plus_b_whole_square: "a_plus_b_whole_square",
-            mF.a_squared_plus_2ab_plus_b_squared: "a_plus_2ab_plus_b_squared",
+            mF.a_squared_plus_2ab_plus_b_squared: "a_squared_plus_2ab_plus_b_squared",
             mF.a_minus_b_whole_squared_plus_4ab: "a_minus_b_whole_squared_plus_4ab",
             mF.a_minus_b_whole_squared: "a_minus_b_whole_squared",
             mF.a_squared_minus_2ab_plus_b_squared: "a_squared_minus_2ab_plus_b_squared",
+            mF.a_plus_b_whole_squared_minus_4ab: "a_plus_b_whole_squared_minus_4ab",
             mF.a_squared_plus_b_squared: "a_squared_plus_b_squared",
             mF.negative_2ab: "negative_2ab",
             mF.positive_2ab: "positive_2ab",
@@ -200,6 +206,30 @@ class FunctionManager:
             mF.a_minus_b_whole_cubed_minus_3ab_times_a_minus_b: "a_minus_b_whole_cubed_minus_3ab_times_a_minus_b",
             mF.a_minus_b_times_a_squared_plus_ab_plus_b_squared: "a_minus_b_times_a_squared_plus_ab_plus_b_squared"
         }
+
+    def _setPositiveNegativeFunctionMap(self):
+        for key, value in self.name_to_reference.items():
+            all_values = list(self.name_to_reference.values())
+            first_list = [value] + [self.name_to_reference[item] for sublist in self.vector_arithmetics if
+                                    key in sublist for item in sublist if item != key]
+            second_list = [v for v in all_values if v not in first_list]
+            self.positive_negative_function_map[key] = (first_list, second_list)
+
+    def _setVectorArithmetics(self):
+        self.vector_arithmetics = [
+            ["mean", "average"],
+            ["a_plus_b_whole_square", "a_squared_plus_2ab_plus_b_squared", "a_minus_b_whole_squared_plus_4ab"],
+            ["a_minus_b_whole_squared", "a_squared_minus_2ab_plus_b_squared", "a_plus_b_whole_squared_minus_4ab"],
+            ["a_cubed_minus_b_cubed", "a_minus_b_whole_cubed_minus_3ab_times_a_minus_b",
+             "a_minus_b_times_a_squared_plus_ab_plus_b_squared"],
+            ["a_cubed_plus_b_cubed", "a_plus_b_whole_cubed_minus_3ab_times_a_plus_b",
+             "a_plus_b_times_a_squared_minus_ab_plus_b_squared"],
+            ["x_plus_a_times_x_plus_b", "x_squared_plus_a_plus_b_times_x_plus_ab"],
+        ]
+        # "a_squared_plus_b_squared" == "a_plus_b_whole_square" + "negative_2ab" == "a_minus_b_whole_squared" + "positive_2ab"
+
+    def getPositiveNegativeFunctionMap(self):
+        return self.positive_negative_function_map
 
     def getNameToReference(self):
         return self.name_to_reference

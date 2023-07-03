@@ -32,3 +32,7 @@ Represent function embeddings.
    5. https://huggingface.co/microsoft/graphcodebert-base (Going for this one)
       6. https://arxiv.org/abs/2009.08366
 4. https://github.com/JetBrains-Research/astminer (Not gonna work -> inferior method)(Based on code2vec)
+
+### Loss function
+
+Need a better loss function than triplet loss function, which can accommodate all type of vector arithmetics.
