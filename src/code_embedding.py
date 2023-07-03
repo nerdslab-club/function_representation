@@ -5,19 +5,6 @@ import types
 import torch.nn.functional as functional
 
 
-def getShape(embedding):
-    """Print and return the shape and length of an embedding
-
-    :param embedding: The embedding tensor whom shape and length is to be calculated
-    :return: Tuple as (shape, length)
-    """
-    shape = embedding.shape
-    length = len(embedding)
-    print(shape)
-    print(length)
-    return shape, length
-
-
 class CodeEmbedding:
     def __init__(self):
         self.tokenizer = AutoTokenizer.from_pretrained("microsoft/graphcodebert-base")
@@ -110,3 +97,16 @@ class CodeEmbedding:
         padded_tensor = functional.pad(logits, (0, 0, 0, max_length - logits.shape[1]))
         reshaped_tensor = padded_tensor.squeeze()
         return reshaped_tensor
+
+    @staticmethod
+    def getShape(embedding):
+        """Print and return the shape and length of an embedding
+
+        :param embedding: The embedding tensor whom shape and length is to be calculated
+        :return: Tuple as (shape, length)
+        """
+        shape = embedding.shape
+        length = len(embedding)
+        print(shape)
+        print(length)
+        return shape, length

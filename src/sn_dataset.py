@@ -35,3 +35,4 @@ class SNDataset(Dataset):
                     for v3 in value3:
                         combinations.append((value1, v2, v3))
         self.samples = combinations
+

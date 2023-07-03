@@ -2,3 +2,4 @@ sentence-transformers == 2.2.2
 numpy~=1.25.0
 transformers == 4.30.2
 torch
+tensorboard == 2.13.0
