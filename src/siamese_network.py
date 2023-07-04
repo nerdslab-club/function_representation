@@ -20,7 +20,7 @@ class SiameseNetwork(pl.LightningModule):
     def triplet_loss(self, anchor, positive, negative, margin=0.6):
         distance_positive = F.pairwise_distance(anchor, positive)
         distance_negative = F.pairwise_distance(anchor, negative)
-        loss = torch.relu(distance_positive - distance_negative + margin)
+        loss = torch.mean(torch.relu(distance_positive - distance_negative + margin))
         return loss
 
     def training_step(self, batch, batch_idx):
@@ -31,6 +31,8 @@ class SiameseNetwork(pl.LightningModule):
 
         loss = self.triplet_loss(anchor_embedding, positive_embedding, negative_embedding)
         self.log('train_loss', loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
+        print(batch_idx)
+        print(loss)
         return loss
 
     def configure_optimizers(self):
