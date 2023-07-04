@@ -17,10 +17,10 @@ class SiameseNetwork(pl.LightningModule):
         x = x.view(x.size(0), -1)  # Flatten the input
         return self.encoder(x)
 
-    def triplet_loss(self, anchor, positive, negative, margin=0.2):
+    def triplet_loss(self, anchor, positive, negative, margin=0.6):
         distance_positive = F.pairwise_distance(anchor, positive)
         distance_negative = F.pairwise_distance(anchor, negative)
-        loss = torch.mean(torch.relu(distance_positive - distance_negative + margin))
+        loss = torch.relu(distance_positive - distance_negative + margin)
         return loss
 
     def training_step(self, batch, batch_idx):

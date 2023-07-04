@@ -51,8 +51,7 @@ class CodeEmbedding:
         # Pad the tensor to the desired shape [300, 768]
         padded_tensor = functional.pad(hidden_states_embedding[0],
                                        (0, 0, 0, max_length - hidden_states_embedding[0].shape[1]))
-        reshaped_tensor = padded_tensor.squeeze()
-        return reshaped_tensor
+        return padded_tensor
 
     def _getRawFunctionEmbedding(self, function_ref: types):
         """Calculate the hidden states embedding for the function tokens
@@ -81,8 +80,8 @@ class CodeEmbedding:
         # Pad the tensor to the desired shape [300, 768]
         padded_tensor = functional.pad(hidden_states_embedding[0],
                                        (0, 0, 0, max_length - hidden_states_embedding[0].shape[1]))
-        reshaped_tensor = padded_tensor.squeeze()
-        return reshaped_tensor
+        # reshaped_tensor = padded_tensor.squeeze()
+        return padded_tensor
 
     def getLogits(self, function_name: str, max_length=300):
         """Calculate the logits for the given function.
@@ -95,8 +94,7 @@ class CodeEmbedding:
         logits = output.logits
         # Pad the tensor to the desired shape [300, 768]
         padded_tensor = functional.pad(logits, (0, 0, 0, max_length - logits.shape[1]))
-        reshaped_tensor = padded_tensor.squeeze()
-        return reshaped_tensor
+        return padded_tensor
 
     @staticmethod
     def getShape(embedding):
