@@ -5,7 +5,7 @@ Represent function embeddings.
 ### Tasks
 
 1. Represent function using vector embeddings
-<img src="./assets/initial function embedding.png" alt="alt text">
+<img src="./assets/initial_function_embedding_v2.png" alt="alt text">
 2. Find similarity between functions.
 
 ### Vector arithmetic
