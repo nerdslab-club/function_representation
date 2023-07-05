@@ -3,6 +3,7 @@ from transformers import RobertaConfig
 import functions_manager as fm
 import types
 import torch.nn.functional as functional
+import torch
 
 
 class CodeEmbedding:
@@ -74,7 +75,6 @@ class CodeEmbedding:
         :param max_length: Max length for token that is supported.
         :return: Last hidden state embedding of size [n * 768]
         """
-
         hidden_states_embedding = self._getRawFunctionEmbedding(function_ref)
 
         # Pad the tensor to the desired shape [300, 768]
@@ -108,3 +108,15 @@ class CodeEmbedding:
         print(shape)
         print(length)
         return shape, length
+
+    @staticmethod
+    def getFinalFunctionEmbedding(documentation_embedding, siamese_embedding, dim=1):
+        """Concat documentation_embedding-> [1*768] and siamese_embedding-> [1*768] to get final function embedding-> [2*768]
+
+        :param dim: dim=1 will return tensor of [1, 1536] while dim=0 will return tensor of [2,768]
+        :param documentation_embedding: This tensor is retrieved from sentence encoder using function documentation
+        :param siamese_embedding: This tensor is retrieved from siamese network using function token embeddings
+        :return: final function embedding tensor of size [2*768]
+        """
+        concatenated_embedding = torch.cat((documentation_embedding, siamese_embedding), dim=dim)
+        return concatenated_embedding

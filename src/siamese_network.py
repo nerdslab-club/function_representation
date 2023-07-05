@@ -31,8 +31,7 @@ class SiameseNetwork(pl.LightningModule):
 
         loss = self.triplet_loss(anchor_embedding, positive_embedding, negative_embedding)
         self.log('train_loss', loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
-        print(batch_idx)
-        print(loss)
+        print(batch_idx, loss)
         return loss
 
     def configure_optimizers(self):
