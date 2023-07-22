@@ -25,7 +25,6 @@ Represent function embeddings.
 
 1. https://github.com/UKPLab/sentence-transformers/tree/master
 
-
 2. https://github.com/microsoft/PyCodeGPT/tree/main (Not gonna work -> only provides logits)
 3. https://github.com/microsoft/CodeBERT
    4. https://huggingface.co/microsoft/codebert-base
