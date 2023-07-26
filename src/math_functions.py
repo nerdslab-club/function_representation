@@ -34,15 +34,15 @@ class MathFunctions:
         return x - y
 
     @staticmethod
-    def multiplication(x: int, y: int) -> int:
-        """This function multiplies two integers and returns the result as an integer.
+    def multiplication(x: float, y: float) -> float:
+        """This function multiplies two float and returns the result as a float.
 
         Params:
-            x (int): First integer of the multiplication operation.
-            y (int): Second integer of the multiplication operation.
+            x (float): First float of the multiplication operation.
+            y (float): Second float of the multiplication operation.
 
         Returns:
-            int: The result of the multiplication operation of the given params.
+            float: The result of the multiplication operation of the given params.
         """
         return x * y
 
@@ -809,6 +809,7 @@ class MathFunctions:
         """
         return (a ** 2 + b ** 2) ** 0.5
 
+    # TODO can be done
     @staticmethod
     def circle_area(radius: float) -> float:
         """Calculates the area of a circle.
@@ -861,6 +862,47 @@ class MathFunctions:
         return numerator // denominator
 
     @staticmethod
+    def invert_number(number: float) -> float:
+        """This function calculates the reciprocal (inverse) of a given number.
+        The reciprocal of a number 'n' is 1/n.
+
+        Params:
+            number (float): The number for which the reciprocal will be calculated.
+
+        Returns:
+            float: The reciprocal of the given number.
+        """
+        if number == 0:
+            raise ValueError("Cannot invert the number 0 (division by zero).")
+
+        return 1 / number
+
+    @staticmethod
+    def float_to_int(value: float) -> int:
+        """This function converts a floating-point number to an integer by truncating the decimal part.
+
+        Params:
+            value (float): The floating-point number to be converted to an integer.
+
+        Returns:
+            int: The integer representation of the given floating-point number.
+        """
+        return int(value)
+
+    @staticmethod
+    def int_to_float(value: int) -> float:
+        """This function converts an integer to a floating-point number.
+
+        Params:
+            value (int): The integer to be converted to a floating-point number.
+
+        Returns:
+            float: The floating-point representation of the given integer.
+        """
+        return float(value)
+
+    # TODO can be done
+    @staticmethod
     def geometric_series_sum(a: float, r: float, n: int) -> float:
         """Calculates the sum of a geometric series.
 
@@ -877,6 +919,7 @@ class MathFunctions:
         else:
             return a * (1 - r ** n) / (1 - r)
 
+    # TODO can be done
     @staticmethod
     def sigmoid(x: float) -> float:
         """Calculates the sigmoid function value.

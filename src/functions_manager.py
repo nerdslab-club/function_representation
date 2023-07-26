@@ -110,6 +110,9 @@ class FunctionManager:
             "a_cubed_minus_b_cubed": mF.a_cubed_minus_b_cubed,
             "a_minus_b_whole_cubed_minus_3ab_times_a_minus_b": mF.a_minus_b_whole_cubed_minus_3ab_times_a_minus_b,
             "a_minus_b_times_a_squared_plus_ab_plus_b_squared": mF.a_minus_b_times_a_squared_plus_ab_plus_b_squared,
+            "invert_number": mF.invert_number,
+            "float_to_int": mF.float_to_int,
+            "int_to_float": mF.int_to_float,
         }
 
     def _setReferenceToName(self):
@@ -204,7 +207,10 @@ class FunctionManager:
             mF.a_plus_b_times_a_squared_minus_ab_plus_b_squared: "a_plus_b_times_a_squared_minus_ab_plus_b_squared",
             mF.a_cubed_minus_b_cubed: "a_cubed_minus_b_cubed",
             mF.a_minus_b_whole_cubed_minus_3ab_times_a_minus_b: "a_minus_b_whole_cubed_minus_3ab_times_a_minus_b",
-            mF.a_minus_b_times_a_squared_plus_ab_plus_b_squared: "a_minus_b_times_a_squared_plus_ab_plus_b_squared"
+            mF.a_minus_b_times_a_squared_plus_ab_plus_b_squared: "a_minus_b_times_a_squared_plus_ab_plus_b_squared",
+            mF.invert_number: "invert_number",
+            mF.float_to_int: "float_to_int",
+            mF.int_to_float: "int_to_float",
         }
 
     def _setPositiveNegativeFunctionMap(self):
