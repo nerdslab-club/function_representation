@@ -10,6 +10,7 @@ __pycache__/
 
 # Drive upload
 .tmp.driveupload
+.tmp.drivedownload
 
 # Lightening logs
 lightning_logs/

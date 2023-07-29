@@ -27,9 +27,9 @@ Represent function embeddings.
 
 2. https://github.com/microsoft/PyCodeGPT/tree/main (Not gonna work -> only provides logits)
 3. https://github.com/microsoft/CodeBERT
-   4. https://huggingface.co/microsoft/codebert-base
-   5. https://huggingface.co/microsoft/graphcodebert-base (Going for this one)
-      6. https://arxiv.org/abs/2009.08366
+   1. https://huggingface.co/microsoft/codebert-base
+   2. https://huggingface.co/microsoft/graphcodebert-base (Going for this one)
+      1. https://arxiv.org/abs/2009.08366
 4. https://github.com/JetBrains-Research/astminer (Not gonna work -> inferior method)(Based on code2vec)
 
 ### Loss function
