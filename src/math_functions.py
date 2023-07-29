@@ -47,12 +47,12 @@ class MathFunctions:
         return x * y
 
     @staticmethod
-    def division(x: int, y: int) -> float:
+    def division(x: float, y: float) -> float:
         """This function divides the first integer by the second integer and returns the result as a float.
 
         Params:
-            x (int): The dividend.
-            y (int): The divisor.
+            x (float): The dividend.
+            y (float): The divisor.
 
         Returns:
             float: The result of the division operation of the given params.

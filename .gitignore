@@ -4,8 +4,12 @@ __pycache__/
 *$py.class
 .DS_Store
 .idea/
+
 # C extensions
 *.so
+
+# Drive upload
+.tmp.driveupload
 
 # Lightening logs
 lightning_logs/

@@ -1,6 +1,6 @@
 from torch.utils.data import Dataset
 
-from src.code_embedding import CodeEmbedding
+from code_embedding import CodeEmbedding
 
 
 class SNDataset(Dataset):
