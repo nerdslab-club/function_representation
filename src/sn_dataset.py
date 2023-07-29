@@ -4,12 +4,16 @@ from code_embedding import CodeEmbedding
 
 
 class SNDataset(Dataset):
-    def __init__(self, name_to_reference_map: dict, positive_negative_function_map: dict):
+    def __init__(
+        self, name_to_reference_map: dict, positive_negative_function_map: dict
+    ):
         self.name_to_reference_map = name_to_reference_map
         self.positive_negative_function_map = positive_negative_function_map
         self.CodeEmbedding = CodeEmbedding()
         self.samples = []
-        self._find_unique_combinations(name_to_reference_map, positive_negative_function_map)
+        self._find_unique_combinations(
+            name_to_reference_map, positive_negative_function_map
+        )
         self.current_item = -1
 
     def __len__(self):
@@ -24,7 +28,9 @@ class SNDataset(Dataset):
         negative = self.CodeEmbedding.getPerfectFunctionEmbedding(negative_fun)
         return anchor, positive, negative
 
-    def _find_unique_combinations(self, name_to_reference_map: dict, positive_negative_function_map: dict):
+    def _find_unique_combinations(
+        self, name_to_reference_map: dict, positive_negative_function_map: dict
+    ):
         combinations = []
         for key in name_to_reference_map:
             if key in positive_negative_function_map:
@@ -35,4 +41,3 @@ class SNDataset(Dataset):
                     for v3 in value3:
                         combinations.append((value1, v2, v3))
         self.samples = combinations
-

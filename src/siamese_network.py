@@ -3,6 +3,7 @@ import torch.nn.functional as F
 import pytorch_lightning as pl
 import torch
 
+
 class SiameseNetwork(pl.LightningModule):
     def __init__(self, embedding_size=768):
         super(SiameseNetwork, self).__init__()
@@ -10,7 +11,7 @@ class SiameseNetwork(pl.LightningModule):
         self.encoder = nn.Sequential(
             nn.Linear(300 * embedding_size, 3 * embedding_size),
             nn.ReLU(inplace=True),
-            nn.Linear(3 * embedding_size, embedding_size)
+            nn.Linear(3 * embedding_size, embedding_size),
         )
 
     def forward(self, x):
@@ -29,8 +30,12 @@ class SiameseNetwork(pl.LightningModule):
         positive_embedding = self(positive)
         negative_embedding = self(negative)
 
-        loss = self.triplet_loss(anchor_embedding, positive_embedding, negative_embedding)
-        self.log('train_loss', loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
+        loss = self.triplet_loss(
+            anchor_embedding, positive_embedding, negative_embedding
+        )
+        self.log(
+            "train_loss", loss, on_step=True, on_epoch=True, prog_bar=True, logger=True
+        )
         print(batch_idx, loss)
         return loss
 

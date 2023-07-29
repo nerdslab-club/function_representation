@@ -8,4 +8,6 @@ class SNDataloader:
         self.shuffle = shuffle
 
     def getDataLoader(self):
-        return DataLoader(self.dataset, batch_size=self.batch_size, shuffle=self.shuffle)
+        return DataLoader(
+            self.dataset, batch_size=self.batch_size, shuffle=self.shuffle
+        )

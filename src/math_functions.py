@@ -70,7 +70,7 @@ class MathFunctions:
         Returns:
             int: The result of the exponentiation operation of the given params.
         """
-        return x ** y
+        return x**y
 
     @staticmethod
     def absolute_value(x: int) -> int:
@@ -598,7 +598,7 @@ class MathFunctions:
         Returns:
             int: The square of the input number.
         """
-        return x ** 2
+        return x**2
 
     @staticmethod
     def square(x: float | int) -> float | int:
@@ -610,7 +610,7 @@ class MathFunctions:
         Returns:
             float | int: The square of the input number.
         """
-        return x ** 2
+        return x**2
 
     @staticmethod
     def absolute(x: float) -> float:
@@ -634,7 +634,7 @@ class MathFunctions:
         Returns:
             The result of 10 raised to the power of the input exponent.
         """
-        return 10 ** x
+        return 10**x
 
     @staticmethod
     def cube(x: float) -> float:
@@ -646,7 +646,7 @@ class MathFunctions:
         Returns:
             The cube of the input number.
         """
-        return x ** 3
+        return x**3
 
     @staticmethod
     def cube_root(x: float) -> float:
@@ -807,7 +807,7 @@ class MathFunctions:
         Returns:
             float: Length of the hypotenuse of the triangle.
         """
-        return (a ** 2 + b ** 2) ** 0.5
+        return (a**2 + b**2) ** 0.5
 
     # TODO can be done
     @staticmethod
@@ -820,7 +820,7 @@ class MathFunctions:
         Returns:
             float: Area of the circle.
         """
-        return 3.14159 * radius ** 2
+        return 3.14159 * radius**2
 
     @staticmethod
     def permutation(n: int, r: int) -> int:
@@ -917,7 +917,7 @@ class MathFunctions:
         if r == 1:
             return a * n
         else:
-            return a * (1 - r ** n) / (1 - r)
+            return a * (1 - r**n) / (1 - r)
 
     # TODO can be done
     @staticmethod
@@ -1041,7 +1041,7 @@ class MathFunctions:
         Returns:
             int: The result of (a+b)^2 after calculating.
         """
-        return (a+b)**2
+        return (a + b) ** 2
 
     @staticmethod
     def a_squared_plus_2ab_plus_b_squared(a: int, b: int) -> int:
@@ -1055,7 +1055,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^2 + 2ab + b^2.
         """
-        return a ** 2 + 2 * a * b + b ** 2
+        return a**2 + 2 * a * b + b**2
 
     @staticmethod
     def a_minus_b_whole_squared_plus_4ab(a: int, b: int) -> int:
@@ -1097,7 +1097,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^2 - 2ab + b^2.
         """
-        return a ** 2 - 2 * a * b + b ** 2
+        return a**2 - 2 * a * b + b**2
 
     @staticmethod
     def a_plus_b_whole_squared_minus_4ab(a: int, b: int) -> int:
@@ -1125,7 +1125,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^2 + b^2.
         """
-        return a ** 2 + b ** 2
+        return a**2 + b**2
 
     @staticmethod
     def negative_2ab(a: int, b: int) -> int:
@@ -1183,7 +1183,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression x^2 + (a + b)x + ab.
         """
-        return x ** 2 + (a + b) * x + a * b
+        return x**2 + (a + b) * x + a * b
 
     @staticmethod
     def a_cubed_plus_b_cubed(a: int, b: int) -> int:
@@ -1197,7 +1197,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^3 + b^3.
         """
-        return a ** 3 + b ** 3
+        return a**3 + b**3
 
     @staticmethod
     def a_plus_b_whole_cubed_minus_3ab_times_a_plus_b(a: int, b: int) -> int:
@@ -1225,7 +1225,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression (a + b)(a^2 - ab + b^2).
         """
-        return (a + b) * (a ** 2 - a * b + b ** 2)
+        return (a + b) * (a**2 - a * b + b**2)
 
     @staticmethod
     def a_cubed_minus_b_cubed(a: int, b: int) -> int:
@@ -1239,7 +1239,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^3 - b^3.
         """
-        return a ** 3 - b ** 3
+        return a**3 - b**3
 
     @staticmethod
     def a_minus_b_whole_cubed_minus_3ab_times_a_minus_b(a: int, b: int) -> int:
@@ -1267,22 +1267,4 @@ class MathFunctions:
         Returns:
             int: The result of the expression (a - b)(a^2 + ab + b^2).
         """
-        return (a - b) * (a ** 2 + a * b + b ** 2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return (a - b) * (a**2 + a * b + b**2)
