@@ -3,7 +3,7 @@ import re
 import types
 from collections import defaultdict
 
-from math_functions import MathFunctions as mF
+from .math_functions import MathFunctions as mF
 
 
 class FunctionManager:

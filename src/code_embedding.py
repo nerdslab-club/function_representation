@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 from transformers import RobertaConfig
-import functions_manager as fm
+from .functions_manager import FunctionManager as fm
 import types
 import torch.nn.functional as functional
 import torch
