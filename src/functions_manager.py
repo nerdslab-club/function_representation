@@ -1,6 +1,7 @@
 import inspect
 import re
 import types
+from typing import get_type_hints
 from collections import defaultdict
 
 from .math_functions import MathFunctions as mF
@@ -263,12 +264,12 @@ class FunctionManager:
         return self.reference_to_name
 
     @staticmethod
-    def getFunctionAsString(functionName: types):
-        return inspect.getsource(functionName)
+    def getFunctionAsString(function_name: types):
+        return inspect.getsource(function_name)
 
     @staticmethod
-    def getDocStringOfFunction(functionName: types):
-        return functionName.__doc__
+    def getDocStringOfFunction(function_name: types):
+        return function_name.__doc__
 
     @staticmethod
     def getFunctionAsStringWithoutDocString(functionName: types):
@@ -277,6 +278,17 @@ class FunctionManager:
         source_lines = re.sub(r'"{3}([\s\S]*?"{3})', "", source_lines)
         return source_lines
 
+    @staticmethod
+    def get_function_return_type(function_name: types):
+        return get_type_hints(function_name)['return']
+
+    @staticmethod
+    def get_function_param_types(function_name: types) -> dict:
+        parameter_types = get_type_hints(function_name, include_extras=True)
+        return {k: v for k, v in parameter_types.items() if k != 'return'}
+
 
 if __name__ == "__main__":
     print(FunctionManager.getFunctionAsStringWithoutDocString(mF.average))
+    print(FunctionManager.get_function_return_type(mF.average))
+    print(FunctionManager.get_function_param_types(mF.average))
