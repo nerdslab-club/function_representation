@@ -2,6 +2,8 @@
 
 Represent function embeddings.
 
+<span style="color:red;">FSE can be tested with random embedding</span>
+
 ### Tasks
 
 1. Represent function using vector embeddings

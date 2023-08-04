@@ -60,29 +60,17 @@ class MathFunctions:
         return x / y
 
     @staticmethod
-    def exponentiation(x: int, y: int) -> int:
-        """This function raises the first integer to the power of the second integer and returns the result as an integer.
+    def exponentiation(x: float, y: float) -> float:
+        """This function raises the first float to the power of the second float and returns the result as a float.
 
         Params:
-            x (int): The base.
-            y (int): The exponent.
+            x (float): The base.
+            y (float): The exponent.
 
         Returns:
-            int: The result of the exponentiation operation of the given params.
+            float: The result of the exponentiation operation of the given params.
         """
-        return x**y
-
-    @staticmethod
-    def absolute_value(x: int) -> int:
-        """This function returns the absolute value of the given integer.
-
-        Params:
-            x (int): The integer for which the absolute value will be calculated.
-
-        Returns:
-            int: The absolute value of the given integer.
-        """
-        return abs(x)
+        return x ** y
 
     @staticmethod
     def square_root(x: float) -> float:
@@ -135,6 +123,7 @@ class MathFunctions:
         """
         return math.log(x, base)
 
+    # kothin
     @staticmethod
     def sine(x: float) -> float:
         """This function calculates the sine of the given angle in radians and returns the result as a float.
@@ -147,6 +136,7 @@ class MathFunctions:
         """
         return math.sin(x)
 
+    # kothin
     @staticmethod
     def cosine(x: float) -> float:
         """This function calculates the cosine of the given angle in radians and returns the result as a float.
@@ -159,6 +149,7 @@ class MathFunctions:
         """
         return math.cos(x)
 
+    # kothin
     @staticmethod
     def tangent(x: float) -> float:
         """This function calculates the tangent of the given angle in radians and returns the result as a float.
@@ -171,6 +162,7 @@ class MathFunctions:
         """
         return math.tan(x)
 
+    # kothin
     @staticmethod
     def arcsine(x: float) -> float:
         """This function calculates the arcsine of the given value and returns the result as a float.
@@ -183,6 +175,7 @@ class MathFunctions:
         """
         return math.asin(x)
 
+    # kothin
     @staticmethod
     def arccosine(x: float) -> float:
         """This function calculates the arccosine of the given value and returns the result as a float.
@@ -195,6 +188,7 @@ class MathFunctions:
         """
         return math.acos(x)
 
+    # kothin
     @staticmethod
     def arctangent(x: float) -> float:
         """This function calculates the arctangent of the given value and returns the result as a float.
@@ -207,6 +201,7 @@ class MathFunctions:
         """
         return math.atan(x)
 
+    # kothin
     @staticmethod
     def hyperbolic_sine(x: float) -> float:
         """This function calculates the hyperbolic sine of the given value and returns the result as a float.
@@ -219,6 +214,7 @@ class MathFunctions:
         """
         return math.sinh(x)
 
+    # kothin
     @staticmethod
     def hyperbolic_cosine(x: float) -> float:
         """This function calculates the hyperbolic cosine of the given value and returns the result as a float.
@@ -231,6 +227,7 @@ class MathFunctions:
         """
         return math.cosh(x)
 
+    # kothin
     @staticmethod
     def hyperbolic_tangent(x: float) -> float:
         """This function calculates the hyperbolic tangent of the given value and returns the result as a float.
@@ -267,19 +264,7 @@ class MathFunctions:
         """
         return math.log2(x)
 
-    @staticmethod
-    def power(x: float, y: float) -> float:
-        """This function raises the first number to the power of the second number and returns the result as a float.
-
-        Params:
-            x (float): The base.
-            y (float): The exponent.
-
-        Returns:
-            float: The result of the power operation of the given params.
-        """
-        return math.pow(x, y)
-
+    # kothin
     @staticmethod
     def degrees_to_radians(x: float) -> float:
         """This function converts the given angle from degrees to radians and returns the result as a float.
@@ -292,6 +277,7 @@ class MathFunctions:
         """
         return math.radians(x)
 
+    # kothin
     @staticmethod
     def radians_to_degrees(x: float) -> float:
         """This function converts the given angle from radians to degrees and returns the result as a float.
@@ -598,7 +584,7 @@ class MathFunctions:
         Returns:
             int: The square of the input number.
         """
-        return x**2
+        return x ** 2
 
     @staticmethod
     def square(x: float) -> float:
@@ -610,7 +596,7 @@ class MathFunctions:
         Returns:
             float: The square of the input number.
         """
-        return x**2
+        return x ** 2
 
     @staticmethod
     def absolute(x: float) -> float:
@@ -634,7 +620,7 @@ class MathFunctions:
         Returns:
             The result of 10 raised to the power of the input exponent.
         """
-        return 10**x
+        return 10 ** x
 
     @staticmethod
     def cube(x: float) -> float:
@@ -646,7 +632,7 @@ class MathFunctions:
         Returns:
             The cube of the input number.
         """
-        return x**3
+        return x ** 3
 
     @staticmethod
     def cube_root(x: float) -> float:
@@ -807,7 +793,7 @@ class MathFunctions:
         Returns:
             float: Length of the hypotenuse of the triangle.
         """
-        return (a**2 + b**2) ** 0.5
+        return (a ** 2 + b ** 2) ** 0.5
 
     # TODO can be done
     @staticmethod
@@ -820,7 +806,7 @@ class MathFunctions:
         Returns:
             float: Area of the circle.
         """
-        return 3.14159 * radius**2
+        return 3.14159 * radius ** 2
 
     @staticmethod
     def permutation(n: int, r: int) -> int:
@@ -917,7 +903,7 @@ class MathFunctions:
         if r == 1:
             return a * n
         else:
-            return a * (1 - r**n) / (1 - r)
+            return a * (1 - r ** n) / (1 - r)
 
     # TODO can be done
     @staticmethod
@@ -1055,7 +1041,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^2 + 2ab + b^2.
         """
-        return a**2 + 2 * a * b + b**2
+        return a ** 2 + 2 * a * b + b ** 2
 
     @staticmethod
     def a_minus_b_whole_squared_plus_4ab(a: int, b: int) -> int:
@@ -1097,7 +1083,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^2 - 2ab + b^2.
         """
-        return a**2 - 2 * a * b + b**2
+        return a ** 2 - 2 * a * b + b ** 2
 
     @staticmethod
     def a_plus_b_whole_squared_minus_4ab(a: int, b: int) -> int:
@@ -1125,7 +1111,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^2 + b^2.
         """
-        return a**2 + b**2
+        return a ** 2 + b ** 2
 
     @staticmethod
     def negative_2ab(a: int, b: int) -> int:
@@ -1183,7 +1169,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression x^2 + (a + b)x + ab.
         """
-        return x**2 + (a + b) * x + a * b
+        return x ** 2 + (a + b) * x + a * b
 
     @staticmethod
     def a_cubed_plus_b_cubed(a: int, b: int) -> int:
@@ -1197,7 +1183,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^3 + b^3.
         """
-        return a**3 + b**3
+        return a ** 3 + b ** 3
 
     @staticmethod
     def a_plus_b_whole_cubed_minus_3ab_times_a_plus_b(a: int, b: int) -> int:
@@ -1225,7 +1211,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression (a + b)(a^2 - ab + b^2).
         """
-        return (a + b) * (a**2 - a * b + b**2)
+        return (a + b) * (a ** 2 - a * b + b ** 2)
 
     @staticmethod
     def a_cubed_minus_b_cubed(a: int, b: int) -> int:
@@ -1239,7 +1225,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^3 - b^3.
         """
-        return a**3 - b**3
+        return a ** 3 - b ** 3
 
     @staticmethod
     def a_minus_b_whole_cubed_minus_3ab_times_a_minus_b(a: int, b: int) -> int:
@@ -1267,4 +1253,4 @@ class MathFunctions:
         Returns:
             int: The result of the expression (a - b)(a^2 + ab + b^2).
         """
-        return (a - b) * (a**2 + a * b + b**2)
+        return (a - b) * (a ** 2 + a * b + b ** 2)
