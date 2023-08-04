@@ -601,14 +601,14 @@ class MathFunctions:
         return x**2
 
     @staticmethod
-    def square(x: float | int) -> float | int:
+    def square(x: float) -> float:
         """Calculates the square of a number.
 
         Params:
-            x (float | int): Number to be squared.
+            x (float): Number to be squared.
 
         Returns:
-            float | int: The square of the input number.
+            float: The square of the input number.
         """
         return x**2
 

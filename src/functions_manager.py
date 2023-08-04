@@ -13,12 +13,12 @@ class FunctionManager:
         self.reference_to_name = defaultdict(str)
         self.positive_negative_function_map = {}
         self.vector_arithmetics = []
-        self._setNameToReference()
-        self._setReferenceToName()
-        self._setVectorArithmetics()
-        self._setPositiveNegativeFunctionMap()
+        self._set_name_to_reference()
+        self._set_reference_to_name()
+        self._set_vector_arithmetics()
+        self._set_positive_negative_function_map()
 
-    def _setNameToReference(self):
+    def _set_name_to_reference(self):
         self.name_to_reference = {
             "addition": mF.addition,
             "subtraction": mF.subtraction,
@@ -116,7 +116,7 @@ class FunctionManager:
             "int_to_float": mF.int_to_float,
         }
 
-    def _setReferenceToName(self):
+    def _set_reference_to_name(self):
         self.reference_to_name = {
             mF.addition: "addition",
             mF.subtraction: "subtraction",
@@ -214,7 +214,7 @@ class FunctionManager:
             mF.int_to_float: "int_to_float",
         }
 
-    def _setPositiveNegativeFunctionMap(self):
+    def _set_positive_negative_function_map(self):
         for key, value in self.name_to_reference.items():
             all_values = list(self.name_to_reference.values())
             first_list = [value] + [
@@ -227,7 +227,7 @@ class FunctionManager:
             second_list = [v for v in all_values if v not in first_list]
             self.positive_negative_function_map[key] = (first_list, second_list)
 
-    def _setVectorArithmetics(self):
+    def _set_vector_arithmetics(self):
         self.vector_arithmetics = [
             ["mean", "average"],
             [
@@ -254,41 +254,41 @@ class FunctionManager:
         ]
         # "a_squared_plus_b_squared" == "a_plus_b_whole_square" + "negative_2ab" == "a_minus_b_whole_squared" + "positive_2ab"
 
-    def getPositiveNegativeFunctionMap(self):
+    def get_positive_negative_function_map(self):
         return self.positive_negative_function_map
 
-    def getNameToReference(self):
+    def get_name_to_reference(self):
         return self.name_to_reference
 
-    def getReferenceToName(self):
+    def get_reference_to_name(self):
         return self.reference_to_name
 
     @staticmethod
-    def getFunctionAsString(function_name: types):
+    def get_function_as_string(function_name: types):
         return inspect.getsource(function_name)
 
     @staticmethod
-    def getDocStringOfFunction(function_name: types):
+    def get_doc_string_of_function(function_name: types):
         return function_name.__doc__
 
     @staticmethod
-    def getFunctionAsStringWithoutDocString(functionName: types):
+    def get_function_as_string_without_doc_string(function_name: types):
         # Get the source code of the function
-        source_lines = inspect.getsource(functionName)
+        source_lines = inspect.getsource(function_name)
         source_lines = re.sub(r'"{3}([\s\S]*?"{3})', "", source_lines)
         return source_lines
 
     @staticmethod
     def get_function_return_type(function_name: types):
-        return get_type_hints(function_name)['return']
+        return get_type_hints(function_name)["return"]
 
     @staticmethod
     def get_function_param_types(function_name: types) -> dict:
         parameter_types = get_type_hints(function_name, include_extras=True)
-        return {k: v for k, v in parameter_types.items() if k != 'return'}
+        return {k: v for k, v in parameter_types.items() if k != "return"}
 
 
 if __name__ == "__main__":
-    print(FunctionManager.getFunctionAsStringWithoutDocString(mF.average))
+    print(FunctionManager.get_function_as_string_without_doc_string(mF.average))
     print(FunctionManager.get_function_return_type(mF.average))
     print(FunctionManager.get_function_param_types(mF.average))
