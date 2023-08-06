@@ -70,7 +70,7 @@ class MathFunctions:
         Returns:
             float: The result of the exponentiation operation of the given params.
         """
-        return x ** y
+        return x**y
 
     @staticmethod
     def square_root(x: float) -> float:
@@ -444,6 +444,7 @@ class MathFunctions:
         """
         return math.factorial(x)
 
+    # kothin
     @staticmethod
     def is_prime(x: int) -> bool:
         """This function checks if the given number is prime.
@@ -461,6 +462,7 @@ class MathFunctions:
                 return False
         return True
 
+    # kothin
     @staticmethod
     def prime_factors(x: int) -> list:
         """This function calculates the prime factors of the given number and returns them as a list.
@@ -483,6 +485,7 @@ class MathFunctions:
             factors.append(x)
         return factors
 
+    # kothin
     @staticmethod
     def is_perfect_square(x: int) -> bool:
         """This function checks if the given number is a perfect square.
@@ -496,6 +499,7 @@ class MathFunctions:
         sqrt = math.isqrt(x)
         return sqrt * sqrt == x
 
+    # kothin
     @staticmethod
     def is_perfect_cube(x: int) -> bool:
         """This function checks if the given number is a perfect cube.
@@ -584,7 +588,7 @@ class MathFunctions:
         Returns:
             int: The square of the input number.
         """
-        return x ** 2
+        return x**2
 
     @staticmethod
     def square(x: float) -> float:
@@ -596,7 +600,7 @@ class MathFunctions:
         Returns:
             float: The square of the input number.
         """
-        return x ** 2
+        return x**2
 
     @staticmethod
     def absolute(x: float) -> float:
@@ -620,7 +624,7 @@ class MathFunctions:
         Returns:
             The result of 10 raised to the power of the input exponent.
         """
-        return 10 ** x
+        return 10**x
 
     @staticmethod
     def cube(x: float) -> float:
@@ -632,7 +636,7 @@ class MathFunctions:
         Returns:
             The cube of the input number.
         """
-        return x ** 3
+        return x**3
 
     @staticmethod
     def cube_root(x: float) -> float:
@@ -793,9 +797,8 @@ class MathFunctions:
         Returns:
             float: Length of the hypotenuse of the triangle.
         """
-        return (a ** 2 + b ** 2) ** 0.5
+        return (a**2 + b**2) ** 0.5
 
-    # TODO can be done
     @staticmethod
     def circle_area(radius: float) -> float:
         """Calculates the area of a circle.
@@ -806,7 +809,7 @@ class MathFunctions:
         Returns:
             float: Area of the circle.
         """
-        return 3.14159 * radius ** 2
+        return 3.14159 * radius**2
 
     @staticmethod
     def permutation(n: int, r: int) -> int:
@@ -887,7 +890,6 @@ class MathFunctions:
         """
         return float(value)
 
-    # TODO can be done
     @staticmethod
     def geometric_series_sum(a: float, r: float, n: int) -> float:
         """Calculates the sum of a geometric series.
@@ -903,7 +905,7 @@ class MathFunctions:
         if r == 1:
             return a * n
         else:
-            return a * (1 - r ** n) / (1 - r)
+            return a * (1 - r**n) / (1 - r)
 
     # TODO can be done
     @staticmethod
@@ -1041,7 +1043,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^2 + 2ab + b^2.
         """
-        return a ** 2 + 2 * a * b + b ** 2
+        return a**2 + 2 * a * b + b**2
 
     @staticmethod
     def a_minus_b_whole_squared_plus_4ab(a: int, b: int) -> int:
@@ -1083,7 +1085,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^2 - 2ab + b^2.
         """
-        return a ** 2 - 2 * a * b + b ** 2
+        return a**2 - 2 * a * b + b**2
 
     @staticmethod
     def a_plus_b_whole_squared_minus_4ab(a: int, b: int) -> int:
@@ -1111,7 +1113,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^2 + b^2.
         """
-        return a ** 2 + b ** 2
+        return a**2 + b**2
 
     @staticmethod
     def negative_2ab(a: int, b: int) -> int:
@@ -1169,7 +1171,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression x^2 + (a + b)x + ab.
         """
-        return x ** 2 + (a + b) * x + a * b
+        return x**2 + (a + b) * x + a * b
 
     @staticmethod
     def a_cubed_plus_b_cubed(a: int, b: int) -> int:
@@ -1183,7 +1185,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^3 + b^3.
         """
-        return a ** 3 + b ** 3
+        return a**3 + b**3
 
     @staticmethod
     def a_plus_b_whole_cubed_minus_3ab_times_a_plus_b(a: int, b: int) -> int:
@@ -1211,7 +1213,7 @@ class MathFunctions:
         Returns:
             int: The result of the expression (a + b)(a^2 - ab + b^2).
         """
-        return (a + b) * (a ** 2 - a * b + b ** 2)
+        return (a + b) * (a**2 - a * b + b**2)
 
     @staticmethod
     def a_cubed_minus_b_cubed(a: int, b: int) -> int:
@@ -1225,21 +1227,21 @@ class MathFunctions:
         Returns:
             int: The result of the expression a^3 - b^3.
         """
-        return a ** 3 - b ** 3
+        return a**3 - b**3
 
     @staticmethod
-    def a_minus_b_whole_cubed_minus_3ab_times_a_minus_b(a: int, b: int) -> int:
+    def a_minus_b_whole_cubed_plus_3ab_times_a_minus_b(a: int, b: int) -> int:
         """
-        This function calculates the expression (a - b)^3 - 3ab(a - b) and returns the result as an int.
+        This function calculates the expression (a - b)^3 + 3ab(a - b) and returns the result as an int.
 
         Params:
             a (int): First value for which the expression is going to be calculated.
             b (int): Second value for which the expression is going to be calculated.
 
         Returns:
-            int: The result of the expression (a - b)^3 - 3ab(a - b).
+            int: The result of the expression (a - b)^3 + 3ab(a - b).
         """
-        return (a - b) ** 3 - 3 * a * b * (a - b)
+        return (a - b) ** 3 + 3 * a * b * (a - b)
 
     @staticmethod
     def a_minus_b_times_a_squared_plus_ab_plus_b_squared(a: int, b: int) -> int:
@@ -1253,4 +1255,61 @@ class MathFunctions:
         Returns:
             int: The result of the expression (a - b)(a^2 + ab + b^2).
         """
-        return (a - b) * (a ** 2 + a * b + b ** 2)
+        return (a - b) * (a**2 + a * b + b**2)
+
+    @staticmethod
+    def check_same_string(str1: str, str2: str) -> bool:
+        """This function checks if two given strings are the same.
+
+        Params:
+            str1 (str): The first string for comparison.
+            str2 (str): The second string for comparison.
+
+        Returns:
+            bool: True if the strings are the same, False otherwise.
+        """
+        return str1 == str2
+
+    @staticmethod
+    def reverse_string(input_str: str) -> str:
+        """This function reverses the given string and returns the reversed version.
+
+        Params:
+            input_str (str): The string to be reversed.
+
+        Returns:
+            str: The reversed version of the input string.
+        """
+        return input_str[::-1]
+
+    @staticmethod
+    def get_pi() -> float:
+        """This function returns the value of the mathematical constant pi (π).
+
+        Returns:
+            float: The value of the mathematical constant pi.
+        """
+        return math.pi
+
+    @staticmethod
+    def get_e() -> float:
+        """This function returns the value of the mathematical constant e.
+
+        Returns:
+            float: The value of the mathematical constant e.
+        """
+        return math.e
+
+    @staticmethod
+    def calculate_dot_product(vector1, vector2):
+        """This function calculates the dot product of two vectors using NumPy's dot function.
+
+        Params:
+            vector1 (array-like): The first vector.
+            vector2 (array-like): The second vector.
+
+        Returns:
+            float: The dot product of the two input vectors.
+        """
+        dot_product = np.dot(vector1, vector2)
+        return dot_product
