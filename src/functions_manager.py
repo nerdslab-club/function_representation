@@ -248,7 +248,7 @@ class FunctionManager:
             ],
             [
                 "a_cubed_minus_b_cubed",
-                "a_minus_b_whole_cubed_minus_3ab_times_a_minus_b",
+                "a_minus_b_whole_cubed_plus_3ab_times_a_minus_b",
                 "a_minus_b_times_a_squared_plus_ab_plus_b_squared",
             ],
             [
