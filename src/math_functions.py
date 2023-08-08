@@ -444,7 +444,6 @@ class MathFunctions:
         """
         return math.factorial(x)
 
-    # kothin
     @staticmethod
     def is_prime(x: int) -> bool:
         """This function checks if the given number is prime.
@@ -462,7 +461,6 @@ class MathFunctions:
                 return False
         return True
 
-    # kothin
     @staticmethod
     def prime_factors(x: int) -> list:
         """This function calculates the prime factors of the given number and returns them as a list.
@@ -485,7 +483,6 @@ class MathFunctions:
             factors.append(x)
         return factors
 
-    # kothin
     @staticmethod
     def is_perfect_square(x: int) -> bool:
         """This function checks if the given number is a perfect square.
@@ -499,7 +496,6 @@ class MathFunctions:
         sqrt = math.isqrt(x)
         return sqrt * sqrt == x
 
-    # kothin
     @staticmethod
     def is_perfect_cube(x: int) -> bool:
         """This function checks if the given number is a perfect cube.
@@ -763,7 +759,7 @@ class MathFunctions:
         return bin(decimal)[2:]
 
     @staticmethod
-    def is_palindrome(x) -> bool:
+    def is_palindrome(x: str) -> bool:
         """Checks if a number is a palindrome.
 
         Params:
@@ -907,7 +903,6 @@ class MathFunctions:
         else:
             return a * (1 - r**n) / (1 - r)
 
-    # TODO can be done
     @staticmethod
     def sigmoid(x: float) -> float:
         """Calculates the sigmoid function value.
@@ -1301,7 +1296,7 @@ class MathFunctions:
         return math.e
 
     @staticmethod
-    def calculate_dot_product(vector1, vector2):
+    def calculate_dot_product(vector1: list, vector2: list):
         """This function calculates the dot product of two vectors using NumPy's dot function.
 
         Params:
