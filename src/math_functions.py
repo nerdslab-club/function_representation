@@ -735,7 +735,7 @@ class MathFunctions:
         return x > 0 and (x & (x - 1)) == 0
 
     @staticmethod
-    def binary_to_decimal(binary):
+    def binary_to_decimal(binary) -> int:
         """Converts a binary number to decimal.
 
         Params:
@@ -747,7 +747,7 @@ class MathFunctions:
         return int(binary, 2)
 
     @staticmethod
-    def decimal_to_binary(decimal):
+    def decimal_to_binary(decimal) -> str:
         """Converts a decimal number to binary.
 
         Params:
