@@ -1296,7 +1296,7 @@ class MathFunctions:
         return math.e
 
     @staticmethod
-    def calculate_dot_product(vector1: list, vector2: list):
+    def calculate_dot_product(vector1: list, vector2: list) -> float:
         """This function calculates the dot product of two vectors using NumPy's dot function.
 
         Params:
@@ -1307,4 +1307,4 @@ class MathFunctions:
             float: The dot product of the two input vectors.
         """
         dot_product = np.dot(vector1, vector2)
-        return dot_product
+        return float(dot_product)
