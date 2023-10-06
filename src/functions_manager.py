@@ -287,6 +287,12 @@ class FunctionManager:
         return source_lines
 
     @staticmethod
+    def get_only_function_signature_as_string(function_name: callable):
+        # Get the function signature of the function
+        function_signature = inspect.signature(function_name)
+        return str(function_signature)
+
+    @staticmethod
     def get_function_return_type(function_name: types):
         return get_type_hints(function_name)["return"]
 
@@ -300,3 +306,4 @@ if __name__ == "__main__":
     print(FunctionManager.get_function_as_string_without_doc_string(mF.average))
     print(FunctionManager.get_function_return_type(mF.average))
     print(FunctionManager.get_function_param_types(mF.average))
+    print(FunctionManager.get_only_function_signature_as_string(mF.average))
