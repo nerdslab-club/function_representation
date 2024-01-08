@@ -280,6 +280,10 @@ class FunctionManager:
         return function_name.__doc__
 
     @staticmethod
+    def get_name_of_function(function_name: types):
+        return function_name.__name__
+
+    @staticmethod
     def get_function_as_string_without_doc_string(function_name: types):
         # Get the source code of the function
         source_lines = inspect.getsource(function_name)
