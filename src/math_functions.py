@@ -1308,3 +1308,13 @@ class MathFunctions:
         """
         dot_product = np.dot(vector1, vector2)
         return float(dot_product)
+
+    @staticmethod
+    def nOtMyToKeN() -> str:
+        """This function returns the 'nOtMyToKeN' as string
+
+        Returns:
+            str: returns the value 'nOtMyToKeN'
+        """
+        return 'nOtMyToKeN'
+

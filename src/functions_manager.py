@@ -118,6 +118,7 @@ class FunctionManager:
             "get_pi": mF.get_pi,
             "get_e": mF.get_e,
             "calculate_dot_product": mF.calculate_dot_product,
+            "nOtMyToKeN": mF.nOtMyToKeN,
         }
 
     def _set_reference_to_name(self):
@@ -220,6 +221,7 @@ class FunctionManager:
             mF.get_pi: "get_pi",
             mF.get_e: "get_e",
             mF.calculate_dot_product: "calculate_dot_product",
+            mF.nOtMyToKeN: "nOtMyToKeN",
         }
 
     def _set_positive_negative_function_map(self):
